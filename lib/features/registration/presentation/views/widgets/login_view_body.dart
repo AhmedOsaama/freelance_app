@@ -99,6 +99,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: buttonColor,
                     fixedSize: const Size(335, 56),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   child: const Text(
                     "Login",

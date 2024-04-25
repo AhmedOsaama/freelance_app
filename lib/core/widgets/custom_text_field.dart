@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import '../utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
-   CustomTextField({super.key, required this.textController, this.keyboardType, this.obscureText = false, this.suffix, required this.fieldHeader, this.textFieldHeight});
+   CustomTextField({super.key, required this.textController, this.keyboardType, this.obscureText = false, this.suffix, required this.fieldHeader, this.textFieldHeight, this.maxLines = 1});
   final TextEditingController textController;
   final TextInputType? keyboardType;
   final bool obscureText;
   final IconButton? suffix;
   final String fieldHeader;
   final double? textFieldHeight;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,11 @@ class CustomTextField extends StatelessWidget {
             controller: textController,
             keyboardType: keyboardType,
             obscureText: obscureText,
+            maxLines: maxLines,
             validator: (value){return;},
             decoration: InputDecoration(
               isDense: true,
-                suffix: suffix,
+                suffixIcon: suffix,
                 border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
                 borderSide: BorderSide(
